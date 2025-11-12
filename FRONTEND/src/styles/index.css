@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+/* ✅ Tailwind 4 theme customization */
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-accent: hsl(var(--accent));
+  --color-border: hsl(var(--border));
+  --color-ring: hsl(var(--ring));
+}
+
+/* CSS Variables */
+:root {
+  --background: 6 11% 7%;
+  --foreground: 210 40% 98%;
+  --primary: 262 80% 50%;
+  --accent: 198 92% 48%;
+  --border: 217 33% 15%;
+  --ring: 262 80% 50%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
